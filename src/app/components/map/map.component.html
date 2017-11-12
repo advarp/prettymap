@@ -1,0 +1,27 @@
+<div class="map">
+  <div class="container">
+    <div class="controls">
+      <div class="controls__container">
+        <button class="btn btn-primary btn-sm" (click)="zoomIn()">Zoom In</button>
+        <button class="btn btn-primary btn-sm" (click)="zoomOut()">Zoom Out</button>
+        <button class="btn btn-primary btn-sm" (click)="hideMarkers()">Hide</button>
+        <button class="btn btn-primary btn-sm" (click)="showMarkers()">Show</button>
+        <select name="" id="" (change)="onType($event)">
+          <option value="">Select type</option>
+          <option *ngFor="let item of list" [value]="item.type">{{item.type}}</option>
+        </select>
+        <button class="btn btn-primary btn-sm" (click)="saveMarkers()">Save</button>
+      </div>
+    </div>
+  </div>
+  <div id="map" *ngIf="!loader"></div>
+</div>
+<app-loader *ngIf="loader"></app-loader>
+
+  <!--<button (click)="mapInit()">Map init</button>-->
+  <!--<button (click)="addMarker()">Add marker</button>-->
+  <!---->
+  <!--<app-loader *ngIf="loader"></app-loader>-->
+
+
+
